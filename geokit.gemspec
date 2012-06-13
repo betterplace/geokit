@@ -38,5 +38,6 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_dependency 'multi_json'
   s.add_development_dependency 'rake'
+  s.add_development_dependency 'mocha'
 end
 
