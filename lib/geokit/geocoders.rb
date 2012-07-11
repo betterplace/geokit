@@ -169,6 +169,8 @@ module Geokit
                 GeoKit::Geocoders::proxy_port,
                 GeoKit::Geocoders::proxy_user,
                 GeoKit::Geocoders::proxy_pass).start(uri.host, uri.port) { |http| http.get(uri.path + "?" + uri.query) }
+        # this gem still isn't encoding aware so mistakenly thinks it's ASCII, so we force it to be utf-8
+        res.body.force_encoding("utf-8")
         return res
       end
 
